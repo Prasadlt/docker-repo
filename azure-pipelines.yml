@@ -21,6 +21,10 @@ stages:
     displayName: Build
     pool: nodepool
     steps:
+        # Install Docker CLI on agent machine.
+    - task: DockerInstaller@0
+      inputs:
+        dockerVersion: '17.09.0-ce'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
