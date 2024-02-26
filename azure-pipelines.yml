@@ -7,7 +7,7 @@ trigger:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'test-connection'
+  dockerRegistryServiceConnection: 'dotnetreg3'
   imageRepository: 'testdotnetimage'
   containerRegistry: 'dotnetreg3.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
