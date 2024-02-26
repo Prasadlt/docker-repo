@@ -22,9 +22,9 @@ stages:
     pool: nodepool
     steps:
         # Install Docker CLI on agent machine.
-    - task: DockerInstaller@0
-      inputs:
-        dockerVersion: '17.09.0-ce'
+    # - task: DockerInstaller@0
+    #   inputs:
+    #     dockerVersion: '17.09.0-ce'
 
     - script: |
         sudo apt update
