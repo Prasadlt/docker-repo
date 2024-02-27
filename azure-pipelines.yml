@@ -58,3 +58,4 @@ stages:
         azureSubscription: $(armConnection)          # Azure Resource Connection
         appName: $(appName)
         containers: $(containerRegistry)/$(imageRepository):$(tag)
+        containerCommand: 'dotnet pipelines-dotnet-core-docker.dll'
