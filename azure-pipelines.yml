@@ -13,7 +13,7 @@ variables:
   containerRegistry: 'dotnetreg3.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  appName: 'dockerapppd'
+  appName: 'netapp4'
 
 stages:
 - stage: Build
