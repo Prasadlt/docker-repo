@@ -1,6 +1,5 @@
 # Docker
 # Build and push an image to Azure Container Registry
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
 - none
@@ -28,6 +27,7 @@ stages:
     #   inputs:
     #     dockerVersion: '17.09.0-ce'
 
+    # Install docker on self hosted agent
     - script: |
         sudo apt update
         sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -41,6 +41,7 @@ stages:
         sudo systemctl restart docker
       displayName: 'Start docker'    
       
+    # Build and push docker image to Azure container registry
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
@@ -51,7 +52,7 @@ stages:
         tags: |
           $(tag)
 
-     ## Deploy container in web app
+     # Deploy container in Azure web app
     - task: AzureWebAppContainer@1
       displayName: 'Azure Web App on Container Deploy'
       inputs:
